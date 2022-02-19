@@ -1,0 +1,50 @@
+<!-- 7-  Ara crea una una llista (potser ordenada o desordenada) amb tres elements dins del «header». 
+Crear un CSS amb una classe anomenada "mostrar" (que de moment no utilitzaràs), que ha de 
+tenir per exemple, les següents regles:
+•S'ha de posar a la part més superior de la pàgina.
+•Tria un color pel seu text.
+•Tria una font de la lletra diferent a la que ve per defecte, i que tengui una grandaria de 
+1,5em. 
+
+Després, afegir una funció js que permeti afegir la classe "mostrar" a la llista. Aquesta funció es 
+cridarà mitjançant l'esdeveniment "onclick" que també es llançarà mitjançant un botó
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>act 7</title>
+    <style>
+        .mostrar {
+            position: relative;
+            top: 0px;
+            color: red;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Afegirem una clase a la nostra llista amb el següent botó:</h1>
+        <ul>
+            <li>ara</li>
+            <li>tendrem</li>
+            <li>un</li>
+            <li>estil</li>
+        </ul>
+    </header>
+    <button onclick="activaMostrar()">Activa la clase</button>
+</body>
+<script>
+    function activaMostrar() {
+        document.querySelector('ul').className = 'mostrar';
+    }
+</script>
+
+</html>

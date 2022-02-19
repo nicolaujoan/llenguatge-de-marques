@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>act 4</title>
+</head>
+
+<body>
+    <h2>som un h2</h2>
+    <p>som un paragraph</p>
+    <h2>i'm an h2</h2>
+    <p>i'm a paragraph</p>
+    <h2>soy un h2</h2>
+    <p>soy un párrafo</p>
+    <h3>som un h3 afegit a la pàgina anterior</h3>
+    <div>
+        <p>primer paràgraf del div</p>
+        <p>segon paràgraf del div</p>
+        <p>tercer paràgraf del div</p>
+        <p><a href="#" onmouseover="growLink()" onmouseleave="reduceLink()">quart paràgraf del div</a></p>
+    </div>
+    <script>
+        function growLink() {
+            document.querySelector('a').style.fontSize = 'larger';
+        }
+        function reduceLink() {
+            document.querySelector('a').style.fontSize = 'medium';
+        }
+    </script>
+</body>
+</html>

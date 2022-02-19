@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>act3</title>
+</head>
+<body>
+    <button onmouseover="majorDeTres()">El major de tres</button>
+    <script>
+        function majorDeTres() {
+            NUM_OF_NUMBERS = 3;
+            numbers = [];
+
+            for (let i = 0; i < NUM_OF_NUMBERS; i++) {
+                numbers.push(parseInt(prompt("nombre " + (i + 1))));
+            }
+
+            alert("El major de tots es: " + Math.max(...numbers));
+        }
+    </script>
+</body>
+</html>

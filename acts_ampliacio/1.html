@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            max-width: 50%;
+        }
+
+        form input {
+            margin: 1.5%;
+            background-color: rgb(211, 242, 243);
+        }
+
+        #enviar {
+            width: 10%;
+            color: black;
+            margin: 1%;
+            align-self: center;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Llista dels nostres guanyadors del dia:</h1>
+    </main>
+    <aside>
+        <form id="guanyadors">
+            <input type="text" name="nom" placeholder="escriu el teu nom">
+            <input type="text" name="direccio" placeholder="direccio">
+            <input type="text" name="poblacio" placeholder="poblacio">
+            <button onclick="doStuff()" id="enviar">Envia</button>
+        </form>
+    </aside>
+
+    <script>
+
+        function doStuff() {
+            let nom = agafaNom("guanyadors", "nom");
+            creaParagrafDespresDeH1(nom);
+        }
+
+        function agafaNom(id_formulari) {
+            
+            // agafam el formulari
+            let form = document.getElementById(id_formulari);
+            
+            // agafam el nom
+            let nom = form.elements["nom"].value;
+
+            return (nom != undefined) ? nom: "falta el nom";
+        }
+
+        function creaParagrafDespresDeH1(contingut) {
+
+            if (contingut !== "falta el nom") {
+                  
+                // cream paragraf i afegim contingut
+                let paragraf = document.createElement("p");
+                paragraf.innerHTML = "Enhorabona " + contingut;
+
+                let some_headers = document.getElementsByTagName("h1");
+                
+                // si hi ha h1, afegim un paragraf fill
+                if (some_headers.length > 0) {
+                    some_headers[0].after(paragraf);
+            }
+            }
+        }
+    </script>
+
+</body>
+</html>

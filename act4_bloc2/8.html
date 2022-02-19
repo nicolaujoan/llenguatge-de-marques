@@ -1,0 +1,65 @@
+<!-- 8- Dins la mateixa pàgina web, dins d'una "section"afegeix: 
+•un «h1», amb el text: "canviam la imatge",
+•un paràgraf amb el text: "Si passes el ratolí damunt la imatge, en veuràs una altra"
+•i una imatge (la que vulguis). 
+•Després amb una funció Javascript, amb l'esdeveniment «onmouseover», la imatge original 
+ha de ser reemplaçada per una altra, i després amb l'esdeveniment «onmouseout», torni a 
+veure-se la imatge original. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>act 8</title>
+    <style>
+        .mostrar {
+            position: relative;
+            top: 0px;
+            color: red;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Afegirem una clase a la nostra llista amb el següent botó:</h1>
+        <ul>
+            <li>ara</li>
+            <li>tendrem</li>
+            <li>un</li>
+            <li>estil</li>
+        </ul>
+    </header>
+    <button onclick="activaMostrar()" ondblclick="desactivaMostrar()">click=on dblclick=off</button>
+    <section>
+        <h1>canviam la imatge</h1>
+        <img onmouseover="canviaImatge()" onmouseleave="recuperaImatge()" width="400" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fres.cloudinary.com%2Fteepublic%2Fimage%2Fprivate%2Fs--nBGf4EwU--%2Ft_Preview%2Fb_rgb%3Affffff%2Cc_lpad%2Cf_jpg%2Ch_630%2Cq_90%2Cw_1200%2Fv1544927995%2Fproduction%2Fdesigns%2F3746666_0.jpg&f=1&nofb=1">
+    </section>
+</body>
+<script>
+
+    function activaMostrar() {
+        document.querySelector('ul').className = 'mostrar';
+
+    }
+
+    function desactivaMostrar() {
+        document.querySelector('ul').className = '';
+    }
+
+    function canviaImatge() {
+        document.querySelector('img').src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpoiemaweb.com%2Fimg%2Fjquery-logo.png&f=1&nofb=1";
+    }
+
+    function recuperaImatge() {
+        document.querySelector('img').src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fres.cloudinary.com%2Fteepublic%2Fimage%2Fprivate%2Fs--nBGf4EwU--%2Ft_Preview%2Fb_rgb%3Affffff%2Cc_lpad%2Cf_jpg%2Ch_630%2Cq_90%2Cw_1200%2Fv1544927995%2Fproduction%2Fdesigns%2F3746666_0.jpg&f=1&nofb=1";
+    }
+
+</script>
+
+</html>

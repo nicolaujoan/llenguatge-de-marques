@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cercles de color</title>
+    <style>
+        body {
+            background-color: blueviolet;
+        }
+        section {
+            display: flex;
+            position: relative;
+            left: 6%;
+        }
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>COLORED BALLS</h1>
+    <section>
+        <img onmouseover="fonsMarro()" onmouseleave="reestableixFons()" src="./cerclemarro.png" alt="marro" id="marro">
+        <img onmouseover="fonsBlau()" onmouseleave="reestableixFons()" src="./cercleblau.png" alt="blau" id="blau">
+        <img onmouseover="fonsTaronja()" onmouseleave="reestableixFons()" src="./cercletaronja.png" alt="taronja"
+            id="taronja">
+        <img onmouseover="fonsVermell()" onmouseleave="reestableixFons()" src="./cerclevermell.png" alt="vermell"
+            id="vermell">
+        <img onmouseover="fonsVerd()" onmouseleave="reestableixFons()" src="./cercleverd.png" alt="verd" id="verd">
+    </section>
+    <script>
+        function fonsMarro() {
+            document.body.style.backgroundColor = "brown";
+        }
+        function fonsBlau() {
+            document.body.style.backgroundColor = "blue";
+        }
+        function fonsTaronja() {
+            document.body.style.backgroundColor = "orange";
+        }
+        function fonsVermell() {
+            document.body.style.backgroundColor = "red";
+        }
+        function fonsVerd() {
+            document.body.style.backgroundColor = "green";
+        }
+        function reestableixFons() {
+            document.body.style.backgroundColor = "blueviolet"
+        }
+    </script>
+</body>
+
+</html>

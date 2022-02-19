@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings & Arrays</title>
+</head>
+<body>
+    <button onclick="processaCadena()">Processador de strings</button>
+    <script>
+
+        function processaCadena() {
+            let cadena = prompt("Introdueix una cadena de text: ");
+
+            alert("minuscula: \n" + cadena.toLowerCase()); // en minuscula
+            alert("majuscula: \n" + cadena.toUpperCase()); // en majuscula
+
+            // text sense 5 lletres finals
+            if(cadena.length > 5) alert("Text sense 5 lletres finals\n" + cadena.slice(0, cadena.length - 6));
+
+            // pas a array
+            let arr = cadena.split("");
+
+            // mostram contingut
+            alert("contingut de l'array");
+            for (const lletra of arr) {
+                alert(lletra);
+            }
+        }
+    </script>
+</body>
+</html>

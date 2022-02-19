@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./form.css">
+    <title>home</title>
+</head>
+<body>
+    <header>
+        <img src="./java.png" alt="java" class="responsive-img"> 
+        <h1>System.out.println("veïns ♥ Java");</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./historia.html">Historia</a></li>
+            <li><a href="./activitats.html">Activitats</a></li>
+            <li><a href="./form.html">Formulari</a></li>
+        </ul>
+    </nav>
+
+    <h3>Formulari informatiu</h3>
+
+   <form action="mailto:joannicolau23@gmail.com" method="post" >
+        
+    <!-- nom complet + contrasenya -->
+        <input type="text" placeholder="nom complet" maxlength="30">
+        <input type="password" placeholder="contrasenya" minlength="8" maxlength="12" pattern="[0-9]{1}" pattern="A-Za-z!?$" required><br><br>
+    
+    <!-- color ulls y sexe --> 
+        color d'ulls: <input type="color" placeholder="color d'ulls"><br>
+        <p>Sexe:</p>
+        <input type="radio" id="home" name="sexe" value="home">
+        <label for="home">home</label><br>
+        <input type="radio" id="dona" name="sexe" value="dona">
+        <label for="dona">dona</label><br><br>
+    
+    <!-- edat i activitats -->
+        <input type="number" placeholder="edat" required><br>
+        <p>activitats:</p>
+        <input type="checkbox" id="cant coral" name="cant coral" value="cant coral">
+        <label for="cant coral">cant coral</label><br>
+        <input type="checkbox" id="aikido" name="aikido" value="aikido">
+        <label for="aikido">aikido</label><br>
+        <input type="checkbox" id="sevillanes" name="sevillanes" value="sevillanes">
+        <label for="sevillanes">sevillanes</label><br><br>
+
+    <!-- enviar o reset -->
+        <input type="submit" placeholder="enviar">
+        <input type="reset" placeholder="reset">
+
+   </form>
+
+    <div class="clearfix"></div>
+
+    <footer>
+        
+        <p>Author: Joan Nicolau Santandreu</p>
+        <p>Date of creation: 11/01/2022</p>
+        
+    </footer>
+</body>
+</html>

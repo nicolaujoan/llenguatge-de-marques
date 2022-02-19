@@ -1,0 +1,86 @@
+body {
+    background-color: rgb(250, 176, 176);
+}
+
+header {
+    overflow: auto;
+    display: flex;
+    color: rgb(0, 0, 36);
+}
+
+.responsive-img {
+    width: 100%;
+    max-width: 60px;
+    max-height: 60px;
+    height: auto;
+    float: left;
+}
+
+header h1 {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+.clearfix {
+    clear: both;
+}
+
+nav {
+    margin-top: 1em;
+    background-color: rgb(175, 175, 223);
+    width: max-content;
+}
+     
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li {
+    margin-right: 2em;
+    font-size: 1em;
+}
+
+a:link, a:visited {
+    color: red;
+    text-decoration: none;
+    text-decoration: solid;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: solid;
+}
+
+a:active {
+    color: #6cf;
+}
+
+form {
+    position: relative;
+    margin-bottom: 6em;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    background:#6cf;
+}
+
+/* Breakpoint */
+@media only screen and (max-width: 600px) {
+
+    header {
+        font-size: small;
+    }
+
+    nav {
+        margin: auto;
+    }
+}

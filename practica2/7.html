@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jugant amb la imatge</title>
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+     
+    </style>
+</head>
+
+<body>
+    <button onclick="amaga()">amaga</button>
+    <button onclick="mostra()">mostra</button>
+    <button onclick="maximitza()">maximitza</button>
+    <button onclick="minimitza()">minimitza</button>
+    <img id="real" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fcleus.co%2Fwp-content%2Fuploads%2F2019%2F03%2FScreenshot-2019-03-14-at-4.18.58-PM.png%3Fresize%3D1000%252C773%26ssl%3D1&f=1&nofb=1"
+        alt="solution" width="500" height="500">
+    <script>   
+
+        let img = document.querySelector("img");
+
+        function amaga() {
+            img.style.display = "none";
+        }
+
+        function mostra() {
+            img.style.display = "block";
+        }
+
+        function maximitza() {
+            var myImg = document.querySelector("img");
+            var currWidth = myImg.clientWidth;
+            myImg.style.width = (currWidth + 50) + "px";
+        }
+
+        function minimitza() {
+            var myImg = document.querySelector("img");
+            var currWidth = myImg.clientWidth;
+            myImg.style.width = (currWidth - 50) + "px";
+        }
+
+    </script>
+</body>
+
+</html>

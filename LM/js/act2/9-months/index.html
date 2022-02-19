@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesos</title>
+</head>
+<body>
+    <script>
+
+       const mesos = ['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny', 'Juliol',
+            'Agost', 'Setembre', 'Octubre', 'Novembre', 'Desembre'];
+
+        let message = '';
+
+        const espai = '&nbsp;&nbsp;&nbsp;&nbsp;';
+
+        for (const mes in mesos) {
+            message += mesos[mes] + espai;
+        }
+        
+        document.write('<h3>' + message + '</h3>');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.flex-container {
+    display: flex;
+    border: 2px solid red;
+    flex-direction: column;
+    /* Establecemos un height igual al del viewport ya que si no establecemos un height, el height se resuelve a auto y ocupa el height del contenido. Por tanto, flex-grow como distribuye el espacio libre, se queda sin espacio y la propiedad no hace crecer los items. */
+    height: 100vh;
+    
+  }
+  
+  .element1 {
+    background-color: blue;
+    flex-grow: 1;
+  }
+  
+  .element2 {
+    background-color: green;
+    flex-grow: 2;
+  }

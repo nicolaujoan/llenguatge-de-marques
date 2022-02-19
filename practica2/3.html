@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edat usuari</title>
+</head>
+<body>
+    <p>Informació d'accés a FP:</p>
+    <button onclick="procesaEdat()">Consultor accés FP</button>
+    <script>
+        function procesaEdat() {
+            let edatIntroduida = false;
+            let edat;
+
+            while(!edatIntroduida) {
+                edat = parseInt(prompt("Introdueix la teva edat: "));
+                
+                if (isFinite(edat)) edatIntroduida = true; 
+            }
+
+            let output;
+
+            if (edat >= 16) {
+                output = '<p><a href="http://www.caib.es">apunta\'t a la FP dual</p>';
+            } else {
+                output = '<p>Ens sap greu pero has de tenir mínim 16 anys per apuntar-te a la FP</p>';
+            }
+
+            document.writeln(output);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notes alumnat</title>
+    <style>
+        #notes {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            background-color: aquamarine;
+            align-items: center;
+        }
+        
+        #notes input {
+            margin: 1%;
+            width: 50%;
+        }
+
+        #notes button {
+            margin: 1%;
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <form id="notes">
+        <input type="text" name="nom" id="nom" placeholder="alumne">
+        <input type="number" max="10" name="primera" id="primera" placeholder="primera avaluacio">
+        <input type="number" max="10" name="segona" id="segona" placeholder="segona avaluacio">
+        <button onclick="calculaPromig()">calcula promig</button>
+    </form>
+    <script>
+        function calculaPromig() {
+            let notes = agafaNotes();
+            let sumaNotes = 0;
+
+            for (const nota of notes) {
+                sumaNotes += parseInt(nota);
+            }
+
+            let promig = sumaNotes / notes.length;
+
+            document.writeln("<p>Promig de notes: " + promig + "</p>");
+        }
+
+        function agafaNotes() {
+            let form = document.getElementById("notes");
+            let primera = form["primera"].value;
+            let segona = form["segona"].value;
+            
+            return [primera, segona];
+        }
+    </script>
+</body>
+</html>

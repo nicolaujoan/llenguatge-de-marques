@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulari enquesta</title>
+
+    <style>
+
+        main {
+            margin-top: 5%;
+            display: flex;
+            background-color: burlywood;
+            max-width: 50%;
+        }
+
+        main div {
+            margin: 2%;
+        }
+
+        form {
+            margin: 3%;
+            background-color: beige;
+        }
+
+        form p {
+            margin-left: 2%;
+        }
+
+        form input {
+            margin: 1.5%;
+            background-color: rgb(211, 242, 243);
+        }
+
+        .llistes {
+            background-color: blueviolet;
+            color: yellow;
+        }
+
+        ul {
+            margin-left: 3%;
+            background-color: salmon;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h2>Participants de la enquesta</h2>
+    
+    <form name="enquesta">
+        <input type="text" name="nom" id="nom" placeholder="nom del participant"><br><br>
+        <input type="text" name="estudis" id="estudis" placeholder="estudis"><br>
+        <p>Data inici estudis</p>
+        <input type="date" name="comenc" id="comenc"><br>
+
+        <p>hobbies</p>
+
+        <input type="checkbox" name="hobbie1" id="hobbie1" value="futbol">
+        <label for="hobbie1">futbol</label>
+
+        <input type="checkbox" name="hobbie2" id="hobbie2" value="basket">
+        <label for="hobbie2">basket</label>
+        
+        <input type="checkbox" name="hobbie3" id="hobbie3" value="tenis">
+        <label for="hobbie3">tenis</label>
+
+        <input type="checkbox" name="hobbie4" id="hobbie4" value="padel">
+        <label for="hobbie4">padel</label><br><br>
+
+        <input type="button" value="Executa" onclick="agafaIafegeixCamps()">
+        <input type="reset" name="reset" id="reset">
+    </form>
+
+    <p class="llistes">noms</p>
+    <ul id="llistanoms"></ul>
+    <p class="llistes">estudis</p>
+    <ul id="llistaestudis"></ul>
+
+    <script>
+        
+        function agafaIafegeixCamps() {
+            
+            // obtenim el formulari
+            let formulari = document.forms.enquesta;
+
+            // obtenim el nom i els estudis
+            let nom = formulari.elements.nom.value;
+            let estudi = formulari.elements.estudis.value;
+
+            // afeigim el nom i estudis a les llistes
+            let llistaNoms = document.getElementById("llistanoms");
+            let llistaEstudis = document.getElementById("llistaestudis");
+
+            let nouNom = document.createElement("li");
+            nouNom.innerText = nom;
+
+            let nousEstudis = document.createElement("li");
+            nousEstudis.innerText = estudi;
+
+            llistaNoms.appendChild(nouNom);
+            llistaEstudis.appendChild(nousEstudis);
+
+        }
+
+    </script>
+
+</body>
+</html>

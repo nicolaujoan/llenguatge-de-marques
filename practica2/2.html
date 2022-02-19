@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descompte vehicles</title>
+</head>
+<body>
+    <form name="vehicles">
+        <p>seleccioni el cotxe que desitja:</p>
+        <input type="radio" id="ford" name="fav_cotxo" value="ford">
+        <label for="ford">FORD</label><br>
+        <input type="radio" id="seat" name="fav_cotxo" value="seat">
+        <label for="seat">SEAT</label><br>
+        <input type="radio" id="citroen" name="fav_cotxo" value="citroen">
+        <label for="citroen">CITROEN</label><br>
+        <input type="radio" name="fav_cotxo" id="audi" value="audi">
+        <label for="audi">AUDI</label>
+    </form>
+    <br>
+    <button onclick="mostraResultat()">Tramita descompte</button>
+
+    <script>
+
+        function seleccionaCotxe() {
+            
+            let formulari = document.forms.vehicles;  // take the form 
+            let cotxos = formulari.elements.fav_cotxo;  // take all the radio options
+
+            var cotxeSeleccionat; // this will be our selected car
+
+            // loop through cotxos
+            for(var i = 0; i < cotxos.length; i++) {
+                if(cotxos[i].checked) cotxeSeleccionat = cotxos[i].value;  // assign it to the checked one
+            }
+
+            return cotxeSeleccionat;
+        }
+
+        function aplicaDescompte(cotxeSeleccionat) {
+
+            var percentatgeDescompte = 0;
+
+            switch(cotxeSeleccionat) {
+                case "ford":
+                    percentatgeDescompte = 10;
+                    break;
+                case "seat":
+                    percentatgeDescompte = 8;
+                    break; 
+                case "citroen":
+                    percentatgeDescompte = 6;
+                    break;
+                case "audi":
+                    percentatgeDescompte = 4;
+                    break;
+                default:
+                    percentatgeDescompte = 0;
+                    break;
+            }
+
+            return percentatgeDescompte;
+        }
+
+        function mostraResultat() {
+            var cotxeSeleccionat = seleccionaCotxe();
+            var percentatgeDescompte = aplicaDescompte(cotxeSeleccionat);
+
+            if (percentatgeDescompte) {
+                var nouPar = document.createElement("p");
+                document.writeln(`<p>El vostre decompte és d'un ${percentatgeDescompte}%</p>`);
+            }
+            else {
+                alert("Seleccionau un cotxe per poder rebre un descompte");
+            }
+        }
+
+    </script>
+
+</body>
+</html>

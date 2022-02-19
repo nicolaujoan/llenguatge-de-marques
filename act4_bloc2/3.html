@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>act 3</title>
+</head>
+<body>
+    <h2>som un h2</h2>
+    <p>som un paragraph</p>
+    <h2>i'm an h2</h2>
+    <p>i'm a paragraph</p>
+    <h2>soy un h2</h2>
+    <p>soy un párrafo</p>
+    <h3>som un h3 afegit a la pàgina anterior</h3>
+    <div>
+        <p>primer paràgraf del div</p>
+        <p>segon paràgraf del div</p>
+        <p>tercer paràgraf del div</p>
+        <p>quart paràgraf del div</p>
+        <button id="delete" onclick="eliminaPrimerPdelDiv()">bye primer paràgraf del div!</button>
+        <button id="hide-seek" onclick="amagaPrimerPdelDiv()" ondblclick="mostraPrimerPdelDiv()">amaga primer paràgraf del div </button>
+    </div>
+    <script>
+        function amagaPrimerPdelDiv() {
+            // it takes the first match
+            let paragraf = document.querySelector('div').querySelector('p');
+
+            // hide the paragraf
+            paragraf.style.display = 'none';
+            
+            // get the button
+            let button = document.getElementById('hide-seek');
+
+            // // hide other button
+            document.getElementById('delete').style.display = 'none';
+
+            // change button text
+            button.textContent = "doble click per tornar a veure'm";
+        }
+
+        function mostraPrimerPdelDiv() {
+            // it takes the first match
+            let paragraf = document.querySelector('div').querySelector('p');
+
+            // show the paragraf
+            paragraf.style.display = 'block';
+            
+            // get the button
+            let button = document.getElementById('hide-seek');
+
+            // // show other button
+            document.getElementById('delete').style.display = 'inline';
+
+            // change button text
+            button.textContent = 'ja torn a ser aquí, click y men vaig';
+        }
+
+        function eliminaPrimerPdelDiv() {
+            let first_paragraph = document.querySelector('div').querySelector('p');
+            first_paragraph.remove();     
+        }
+    </script>
+</body>
+</html>

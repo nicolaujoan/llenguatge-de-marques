@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ordena nombres</title>
+</head>
+<body>
+    <button onclick="ordenaNombres()">Ordena nombres</button>
+    <script>
+        function ordenaNombres() {
+            alert("Introdueix 10 nombres, sortiran ordenats.");
+
+            let majorMenor = false;
+
+            let nombres = [];
+
+            // collect numbers
+            for (let index = 0; index < 10; index++) {
+                nombres.push(parseInt(prompt(`Number ${index + 1}`)));
+            }
+
+            // sort the numbers
+            let nombresOrdenats = [];
+
+            // major a menor o menor a major
+            majorMenor ? nombresOrdenats = nombres.sort(function(a, b){ return b - a }) :
+                         nombresOrdenats =                  nombres.sort(function(a, b){ return a - b }) 
+
+            // display the result
+            alert(nombresOrdenats);
+        }
+    </script>
+</body>
+</html>

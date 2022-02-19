@@ -1,0 +1,48 @@
+<!-- 1- Crea una funció js que mostri el text que contenen els nodes de tipus paràgraf i de tipus  títol 
+(<h2>) d'una pàgina web. Serà necessari crear una pàgina amb «p» i «h2» (més d’un) per a 
+comprovar-ho.  Enllaça-la des d’un botó, amb l’esdeveniment «ondblclick» -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>act 1</title>
+    
+</head>
+<body>
+    <h2>som un h2</h2>
+    <p>som un paragraph</p>
+    <h2>i'm an h2</h2>
+    <p>i'm a paragraph</p>
+    <h2>soy un h2</h2>
+    <p>soy un párrafo</p>
+    <button ondblclick='mostraPyH2()'>dbl click to see content</button>
+    <script>
+        function mostraPyH2() {
+
+            // obtenim la colecció d'elements
+            let paragrafs = document.getElementsByTagName("p");
+            let subtitols = document.getElementsByTagName("h2");
+            let contingut_paragrafs = 'contingut dels paragrafs:\n';
+            let contingut_subtitols = 'contingut dels subtítols:\n';
+
+            // afegim el contingut
+            contingut_paragrafs += getText(paragrafs);
+            contingut_subtitols += getText(subtitols);
+
+            // mostram el contingut per pantalla
+            alert(contingut_paragrafs + "\n" + contingut_subtitols)
+        }
+
+        function getText(elements) {
+            text = '';
+            for (let index = 0; index < elements.length; index++) {
+                text += elements[index].innerText + "\n";  
+            }
+            return text;
+        }
+    </script>
+</body>
+</html>
