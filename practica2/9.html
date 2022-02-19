@@ -35,6 +35,11 @@
             font-size: small;
             color: grey;
         }
+        ul {
+            float: left;
+            background-color: rgb(211, 242, 243);
+            margin-right: 2%;
+        }
     </style>
 </head>
 
@@ -43,7 +48,7 @@
     <form name="esportistes">
         <input type="text" name="nom" placeholder="nom esportista">
         <input type="number" name="edat" min="5" max="100" placeholder="edat">
-        <input type="text" name="esport" placeholder="esport">
+        <input type="text" id="esport" name="esport" placeholder="esport">
         <p>Color de la camiseta:</p>
         <input type="color" name="colorCami" id="colorCami">
         <p>data des de quan es practica:</p>
@@ -59,17 +64,10 @@
 
 <script>
 
-    // function test() {
-
-    //     // test
-    //     let nom = document.forms["esportistes"]["nom"].value;
-    //     let edat = document.forms["esportistes"]["edat"].value;
-    //     alert("nom: " + nom + "\nedat: " + edat);
-    // }
-
     function createSection(userData) {
+        let allowedInputTypes = "text, number, color, date";
         let form = document.forms[0];
-        let esport = form.elements.esport;  // obtenim l'esport -> serà el títol de la secció
+        let esport = form.elements.namedItem("esport").value;  // obtenim l'esport -> serà el títol de la secció
 
         // cream titol
         let titol = document.createElement("p");
@@ -82,10 +80,9 @@
 
         // omplim la llista amb els inputs del formulari
         for (const element of form.elements) {
-            if(element.nodeValue != esport) {  // si el valor no es el de l'esport
-
+            if(element.value != esport && allowedInputTypes.includes(element.type)){  // si el valor no es el de l'esport
                 let li = document.createElement("li");  // cream un li
-                let li_text = document.createTextNode(element.nodeValue);  // cream el text
+                let li_text = document.createTextNode(element.value);  // cream el text
                 li.appendChild(li_text);  // afegim el text
                 llista.appendChild(li);  // afegim el li a la llista
             } 
@@ -97,21 +94,8 @@
         // afegim la ul
         seccio.appendChild(llista);
 
-
-
         document.body.appendChild(seccio);
     }
-
-    function testcreate() {
-
-       let pnou = document.createElement("p");
-       let text = document.createTextNode("El paragraf es nou");
-       pnou.appendChild(text);
-
-       let seccio = document.getElementById("summary");
-       seccio.appendChild(pnou);  
-    }
-
 </script>
 
 </html>
